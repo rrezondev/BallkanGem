@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BallkanGem</title>
+    
+    <!-- Meta tags for SEO and mobile -->
+    <meta name="description" content="BallkanGem - Zbuloni bukurinë e Kosovës me udhërrëfyesin tonë">
+    <meta name="keywords" content="Kosova, turizëm, udhëtim, hotele, restorante, Prishtina, Prizren, Gjakova, Peja, turist, guide">
+    <meta name="author" content="BallkanGem Team">
+    
+    <!-- For better mobile experience -->
+    <meta name="theme-color" content="#1e40af">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <Img src="logo1.png" alt="BallkanGem Logo" 
+                     style="height: 60px; width: auto;">
+                <h1>Ballkan<span>Gem</span></h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active"><i class="fas fa-home"></i> Kryefaqja</a></li>
+                <li><a href="#destinations"><i class="fas fa-map-marked-alt"></i> Destinacione</a></li>
+                <li><a href="#hotels"><i class="fas fa-hotel"></i> Hotele</a></li>
+                <li><a href="#restaurants"><i class="fas fa-utensils"></i> Restorante</a></li>
+                <li><a href="#itinerary"><i class="fas fa-route"></i> Itineraret</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Kontakt</a></li>
+            </ul>
+            <div class="language-selector">
+                <select id="language">
+                    <option value="sq">🇦🇱 Shqip</option>
+                    <option value="en">🇬🇧 English</option>
+                </select>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero" style="position: relative; height: 100vh; min-height: 600px; overflow: hidden; color: white;">
+    <!-- Fotoja -->
+    <img src="malet.jpg" alt="Bukuria e Kosovës" 
+         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+    
+    <!-- Overlay për të bërë tekstin më të lexueshëm -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%); z-index: 0;"></div>
+    
+    <!-- Përmbajtja -->
+    <div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px;">
+        <h2 class="hero-title" style="font-size: 3.5rem; margin-bottom: 20px; text-shadow: 2px 2px 8px rgba(0,0,0,0.5);">
+            Zbuloni Bukurinë e Kosovës
+        </h2>
+        <p class="hero-subtitle" style="font-size: 1.5rem; margin-bottom: 40px; text-shadow: 1px 1px 4px rgba(0,0,0,0.5);">
+            Udhërrëfyesi juaj për aventurë të paharrueshme
+        </p>
+        <a href="#destinations" class="cta-button" style="background: white; color: #1e40af; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+            Eksploro Tani <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+    
+    <!-- Slider në fund -->
+    <div class="hero-slider" style="position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.7); padding: 20px; display: flex; justify-content: space-around;">
+        <!-- ... slides ekzistuese ... -->
+    </div>
+</section>
+
+    <!-- Destinations Section -->
+    <section id="destinations" class="destinations">
+        <h2 class="section-title">Destinacionet Kryesore</h2>
+        <p class="section-subtitle">Zbuloni vendet më të bukura të Kosovës</p>
+        <div class="destinations-grid" id="destinations-container">
+            <!-- Destinations will be loaded from JavaScript -->
+        </div>
+    </section>
+
+    <!-- Hotels Section -->
+    <section id="hotels" class="hotels">
+        <h2 class="section-title">Akomodimi</h2>
+        <p class="section-subtitle">Gjeni vendbanimin perfekt për qëndrimin tuaj</p>
+        <div class="hotels-grid" id="hotels-container">
+            <!-- Hotels will be loaded from JavaScript -->
+        </div>
+    </section>
+
+    <!-- Restaurants Section -->
+    <section id="restaurants" class="restaurants">
+        <h2 class="section-title">Kuzhina Tradicionale</h2>
+        <p class="section-subtitle">Shijoni shijen autentike të Kosovës</p>
+        <div class="restaurants-grid" id="restaurants-container">
+            <!-- Restaurants will be loaded from JavaScript -->
+        </div>
+    </section>
+
+    <!-- Itinerary Planner -->
+    <section id="itinerary" class="itinerary">
+        <h2 class="section-title">Plani i Itinerarit Tuaj</h2>
+        <div class="itinerary-planner">
+            <div class="planner-controls">
+                <div class="planner-input">
+                    <label for="days"><i class="fas fa-calendar-day"></i> Zgjidhni ditët:</label>
+                    <select id="days">
+                        <option value="1">1 Ditë</option>
+                        <option value="3">3 Ditë</option>
+                        <option value="5">5 Ditë</option>
+                        <option value="7">7 Ditë</option>
+                    </select>
+                </div>
+                <div class="planner-input">
+                    <label for="interest"><i class="fas fa-heart"></i> Interesi:</label>
+                    <select id="interest">
+                        <option value="history">Histori & Kulturë</option>
+                        <option value="nature">Natyrë & Aventurë</option>
+                        <option value="food">Ushqim & Kuzhinë</option>
+                        <option value="relax">Relaks & Pushim</option>
+                    </select>
+                </div>
+                <button id="generate-itinerary" class="cta-button">
+                    <i class="fas fa-magic"></i> Gjenero Itinerarin
+                </button>
+            </div>
+            <div class="itinerary-output" id="itinerary-output">
+                <!-- Itinerary will be generated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Na Kontaktoni</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>Adresa</h3>
+                        <p>Prishtinë, Kosovë</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h3>Telefoni</h3>
+                        <p>+383 44 123 456</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Email</h3>
+                        <p>info@kosovaguide.com</p>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Emri juaj" required>
+                <input type="email" placeholder="Email juaj" required>
+                <textarea placeholder="Mesazhi juaj" rows="5" required></textarea>
+                <button type="submit" class="cta-button">Dërgo Mesazhin <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>BallkanGem</h3>
+                <p>Udhërrëfyesi më i mirë për turistët në Kosovë</p>
+            </div>
+            <div class="footer-section">
+                <h3>Lidhjet e Shpejta</h3>
+                <ul>
+                    <li><a href="#home">Kryefaqja</a></li>
+                    <li><a href="#destinations">Destinacione</a></li>
+                    <li><a href="#hotels">Hotele</a></li>
+                    <li><a href="#restaurants">Restorante</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Na Ndiqni</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 BallkanGem. Të gjitha të drejtat e rezervuara.</p>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget">
+        <div class="chatbot-header">
+            <div class="chatbot-avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="chatbot-info">
+                <h4>BallkanGem AI</h4>
+                <span class="chatbot-status">
+                    <i class="fas fa-circle"></i> Online
+                </span>
+            </div>
+            <button class="chatbot-close" id="closeChatbot">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="chatbot-messages" id="chatMessages">
+            <div class="message bot-message">
+                <div class="message-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="message-content">
+                    <p>Përshëndetje! Unë jam BallkanGem AI. Si mund të ndihmoj sot? Mund të pyesni për:</p>
+                    <ul>
+                        <li>🏔️ Destinacionet turistike</li>
+                        <li>🏨 Hotele dhe akomodime</li>
+                        <li>🍽️ Restorante tradicionale</li>
+                        <li>🗺️ Itinerare udhëtimi</li>
+                        <li>ℹ️ Informacione praktike</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chatbot-input">
+            <input type="text" 
+                   id="chatInput" 
+                   placeholder="Shkruani pyetjen tuaj këtu..."
+                   autocomplete="off">
+            <button id="sendMessage">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Chatbot Toggle Button -->
+    <button class="chatbot-toggle" id="chatbotToggle">
+        <i class="fas fa-comments"></i>
+        <span class="notification-badge" id="chatNotification">1</span>
+    </button>
+
+    <!-- JavaScript Files -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
